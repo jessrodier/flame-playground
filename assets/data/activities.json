@@ -1,0 +1,22 @@
+{
+  "activities": [
+    {
+      "id": "trick-words",
+      "name": "Trick Words",
+      "description": "This is an activity filled with tricky words.",
+      "isFavorite": true
+    },
+    {
+      "id": "whacky-words",
+      "name": "Whacky Words",
+      "description": "This is an activity filled with whacky words.",
+      "isFavorite": false
+    },
+    {
+      "id": "weird-words",
+      "name": "Weird Words",
+      "description": "This is an activity filled with weird words.",
+      "isFavorite": false
+    }
+  ]
+}

@@ -1,0 +1,88 @@
+{
+    "Map/SizeTest": {
+        "height": 4300,
+        "width": 2
+    },
+    "activeFile": "Level-02.tmx",
+    "expandedProjectPaths": [
+        "."
+    ],
+    "fileStates": {
+        "Activity.tsx": {
+            "scaleInDock": 1,
+            "scaleInEditor": 1
+        },
+        "Fun Activity.tsx": {
+            "scaleInDock": 1,
+            "scaleInEditor": 1
+        },
+        "Fundations Activity.tsx": {
+            "scaleInDock": 1,
+            "scaleInEditor": 1
+        },
+        "Level-01.tmx": {
+            "expandedObjectLayers": [
+                2,
+                4,
+                3
+            ],
+            "scale": 1.5,
+            "selectedLayer": 0,
+            "viewCenter": {
+                "x": 316.3333333333333,
+                "y": 182.33333333333331
+            }
+        },
+        "Level-02.tmx": {
+            "expandedObjectLayers": [
+                2,
+                3
+            ],
+            "scale": 1.54078125,
+            "selectedLayer": 0,
+            "viewCenter": {
+                "x": 326.78227360308284,
+                "y": 227.48199979718083
+            }
+        },
+        "Level-03.tmx": {
+            "expandedObjectLayers": [
+                2,
+                3
+            ],
+            "scale": 1.7085156249999998,
+            "selectedLayer": 0,
+            "viewCenter": {
+                "x": 270.11751794777996,
+                "y": 216.8549087749783
+            }
+        }
+    },
+    "last.imagePath": "C:/Projects/poc-flutter-flame/assets/images/Terrain",
+    "map.height": 23,
+    "map.lastUsedFormat": "tmx",
+    "map.tileHeight": 16,
+    "map.tileWidth": 16,
+    "map.width": 40,
+    "openFiles": [
+        "Activity.tsx",
+        "Level-01.tmx",
+        "Level-02.tmx",
+        "Level-03.tmx",
+        "Fundations Activity.tsx"
+    ],
+    "project": "Activity.tiled-project",
+    "recentFiles": [
+        "Activity.tsx",
+        "Level-01.tmx",
+        "Fundations Activity.tsx",
+        "Level-03.tmx",
+        "Level-02.tmx",
+        "Fun Activity.tsx"
+    ],
+    "tileset.lastUsedFormat": "tsx",
+    "tileset.tileSize": {
+        "height": 16,
+        "width": 16
+    }
+}
