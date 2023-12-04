@@ -1,11 +1,14 @@
 import 'dart:async';
 
 import 'package:flame/components.dart';
+import 'package:flame_playground/components/checkpoint.dart';
 import 'package:flame_tiled/flame_tiled.dart';
 import 'package:flame_playground/activity.dart';
 import 'package:flame_playground/components/background_tile.dart';
 import 'package:flame_playground/components/collision_block.dart';
+import 'package:flame_playground/components/fruit.dart';
 import 'package:flame_playground/components/player.dart';
+import 'package:flame_playground/components/saw.dart';
 
 class Level extends World with HasGameRef<Activity> {
   final String levelName;
@@ -59,7 +62,28 @@ class Level extends World with HasGameRef<Activity> {
           case 'Player':
             player.position = Vector2(spawnPoint.x, spawnPoint.y);
             add(player);
-            break;
+          case 'Fruit':
+            final fruit = Fruit(
+                fruit: spawnPoint.name,
+                position: Vector2(spawnPoint.x, spawnPoint.y),
+                size: Vector2(spawnPoint.width, spawnPoint.height));
+            add(fruit);
+          case 'Saw':
+            final isVertical = spawnPoint.properties.getValue('isVertical');
+            final offsetNeg = spawnPoint.properties.getValue('offsetNeg');
+            final offsetPos = spawnPoint.properties.getValue('offsetPos');
+            final saw = Saw(
+                isVertical: isVertical,
+                offsetNeg: offsetNeg,
+                offsetPos: offsetPos,
+                position: Vector2(spawnPoint.x, spawnPoint.y),
+                size: Vector2(spawnPoint.width, spawnPoint.height));
+            add(saw);
+          case 'Checkpoint':
+            final checkpoint = Checkpoint(
+                position: Vector2(spawnPoint.x, spawnPoint.y),
+                size: Vector2(spawnPoint.width, spawnPoint.height));
+            add(checkpoint);
           default:
         }
       }

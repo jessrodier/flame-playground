@@ -9,13 +9,15 @@ import 'package:flame_playground/components/level.dart';
 
 // tell our game that we have the ability to handle keyboard components
 class Activity extends FlameGame
-    with HasKeyboardHandlerComponents, DragCallbacks {
+    with HasKeyboardHandlerComponents, DragCallbacks, HasCollisionDetection {
   @override
   Color backgroundColor() => const Color(0xFF211F30);
-  late final CameraComponent cam;
-  Player player = Player(character: 'Mask Dude');
+  late CameraComponent cam;
+  Player player = Player(character: 'Ninja Frog');
   late JoystickComponent joystick;
-  bool showJoystick = false;
+  bool showJoystick = true;
+  List<String> levelNames = ['Level-02', 'Level-02'];
+  int currentLevelIndex = 0;
 
   @override
   FutureOr<void> onLoad() async {
@@ -23,14 +25,7 @@ class Activity extends FlameGame
     // load all images into cache
     await images.loadAllImages();
 
-    final world = Level(player: player, levelName: 'Level-02');
-
-    cam = CameraComponent.withFixedResolution(
-        world: world, width: 640, height: 360);
-    // change camera anchor
-    cam.viewfinder.anchor = Anchor.topLeft;
-
-    addAll([cam, world]);
+    _loadLevel();
 
     if (showJoystick) {
       addJoystick();
@@ -49,18 +44,18 @@ class Activity extends FlameGame
 
   void addJoystick() {
     joystick = JoystickComponent(
-      knob: SpriteComponent(
-        sprite: Sprite(
-          images.fromCache('HUD/Knob.png'),
+        knob: SpriteComponent(
+          sprite: Sprite(
+            images.fromCache('HUD/Knob.png'),
+          ),
         ),
-      ),
-      background: SpriteComponent(
-        sprite: Sprite(
-          images.fromCache('HUD/Joystick.png'),
+        background: SpriteComponent(
+          sprite: Sprite(
+            images.fromCache('HUD/Joystick.png'),
+          ),
         ),
-      ),
-      margin: const EdgeInsets.only(left: 32, bottom: 32),
-    );
+        margin: const EdgeInsets.only(left: 32, bottom: 32),
+        priority: 1);
 
     add(joystick);
   }
@@ -79,5 +74,28 @@ class Activity extends FlameGame
         player.horizontalMovement = 0;
         break;
     }
+  }
+
+  void loadNextLevel() {
+    if (currentLevelIndex < levelNames.length - 1) {
+      currentLevelIndex++;
+      _loadLevel();
+    } else {
+      // no more levels
+    }
+  }
+
+  void _loadLevel() {
+    Future.delayed(const Duration(seconds: 1), () {
+      Level world =
+          Level(player: player, levelName: levelNames[currentLevelIndex]);
+
+      cam = CameraComponent.withFixedResolution(
+          world: world, width: 640, height: 360);
+      // change camera anchor
+      cam.viewfinder.anchor = Anchor.topLeft;
+
+      addAll([cam, world]);
+    });
   }
 }

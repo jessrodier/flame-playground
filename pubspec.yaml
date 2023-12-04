@@ -33,10 +33,14 @@ flutter:
     - assets/images/Background/
     - assets/images/Terrain/
     - assets/images/HUD/
+    - assets/images/Items/Fruits/
+    - assets/images/Items/Checkpoints/Checkpoint/
+    - assets/images/Traps/Saw/
     - assets/images/Main Characters/Mask Dude/
     - assets/images/Main Characters/Ninja Frog/
     - assets/images/Main Characters/Pink Man/
     - assets/images/Main Characters/Virtual Guy/
     - assets/images/Main Characters/Guy One/
+    - assets/images/Main Characters/
     - assets/data/
     - assets/tiles/
