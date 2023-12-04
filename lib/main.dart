@@ -1,8 +1,10 @@
 import 'package:flame/flame.dart';
 import 'package:flame/game.dart';
+import 'package:flame_playground/screens/main_menu.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flame_playground/activity.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 void main() async {
   // Sets full screen and landscape on devices
@@ -12,5 +14,11 @@ void main() async {
 
   Activity game = Activity();
   // kDebugMode prevents from needing to refresh app on save
-  runApp(GameWidget(game: kDebugMode ? Activity() : game));
+  runApp(MaterialApp(
+      themeMode: ThemeMode.dark,
+      darkTheme: ThemeData.dark().copyWith(
+        textTheme: GoogleFonts.bungeeInlineTextTheme(),
+        scaffoldBackgroundColor: Colors.black,
+      ),
+      home: const MainMenu()));
 }

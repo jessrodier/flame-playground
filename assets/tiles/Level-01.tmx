@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.10" tiledversion="1.10.2" orientation="orthogonal" renderorder="right-down" width="40" height="23" tilewidth="16" tileheight="16" infinite="0" nextlayerid="5" nextobjectid="31">
+<map version="1.10" tiledversion="1.10.2" orientation="orthogonal" renderorder="right-down" width="40" height="23" tilewidth="16" tileheight="16" infinite="0" nextlayerid="6" nextobjectid="37">
  <tileset firstgid="1" source="Activity.tsx"/>
  <tileset firstgid="243" source="Fundations Activity.tsx"/>
  <layer id="1" name="Background" width="40" height="23">
@@ -29,8 +29,28 @@
 324,307,324,307,324,307,307,307,307,307,307,307,307,307,307,307,307,307,307,307,307,307,307,307,307,307,307,307,307,307,307,307,307,307,307,324,307,324,307,324
 </data>
  </layer>
+ <objectgroup id="5" name="Data">
+  <object id="36" type="Quest" x="176" y="96" width="288" height="17">
+   <text wrap="1" halign="center">The cow jumped over the _______.</text>
+  </object>
+ </objectgroup>
  <objectgroup id="2" name="Spawnpoints">
   <object id="3" name="Player" type="Player" x="64" y="64" width="32" height="32"/>
+  <object id="31" name="apple" type="Options" x="160" y="176" width="64" height="16">
+   <properties>
+    <property name="isCorrectAnswer" type="bool" value="false"/>
+   </properties>
+  </object>
+  <object id="34" name="moon" type="Options" x="288" y="176" width="64" height="16">
+   <properties>
+    <property name="isCorrectAnswer" type="bool" value="false"/>
+   </properties>
+  </object>
+  <object id="35" name="spoon" type="Options" x="416" y="176" width="64" height="16">
+   <properties>
+    <property name="isCorrectAnswer" type="bool" value="false"/>
+   </properties>
+  </object>
  </objectgroup>
  <objectgroup id="3" name="Collisions">
   <object id="8" x="48" y="32" width="544" height="16"/>
@@ -44,19 +64,5 @@
   <object id="21" type="Platform" x="368.667" y="256.667" width="30" height="14"/>
   <object id="22" x="49.3333" y="272" width="110" height="46.6667"/>
   <object id="23" x="480.667" y="272.667" width="111.333" height="46.6667"/>
- </objectgroup>
- <objectgroup id="4" name="Data">
-  <object id="27" x="160" y="96" width="320" height="20">
-   <text fontfamily="Segoe UI" pixelsize="21" wrap="1" halign="center" valign="bottom">The _____ jumped over the moon.</text>
-  </object>
-  <object id="28" x="160" y="208" width="64" height="16">
-   <text wrap="1" halign="center" valign="center">orange</text>
-  </object>
-  <object id="29" x="288" y="208" width="64" height="16">
-   <text wrap="1" halign="center" valign="center">cow</text>
-  </object>
-  <object id="30" x="416" y="208" width="64" height="16">
-   <text wrap="1" halign="center" valign="center">spoon</text>
-  </object>
  </objectgroup>
 </map>

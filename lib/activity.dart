@@ -15,7 +15,7 @@ class Activity extends FlameGame
   late CameraComponent cam;
   Player player = Player(character: 'Ninja Frog');
   late JoystickComponent joystick;
-  bool showJoystick = true;
+  bool showJoystick = false;
   List<String> levelNames = ['Level-02', 'Level-02'];
   int currentLevelIndex = 0;
 

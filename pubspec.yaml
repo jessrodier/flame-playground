@@ -19,6 +19,7 @@ dependencies:
   flame_forge2d: ^0.15.1
   flame_svg: ^1.8.4
   flame_tiled: ^1.15.0
+  google_fonts: ^6.1.0
 
 dev_dependencies:
   flutter_test:

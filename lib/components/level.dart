@@ -2,6 +2,7 @@ import 'dart:async';
 
 import 'package:flame/components.dart';
 import 'package:flame_playground/components/checkpoint.dart';
+// import 'package:flame_playground/components/quest.dart';
 import 'package:flame_tiled/flame_tiled.dart';
 import 'package:flame_playground/activity.dart';
 import 'package:flame_playground/components/background_tile.dart';
@@ -24,6 +25,7 @@ class Level extends World with HasGameRef<Activity> {
     add(level);
 
     _scrollingBackground();
+    // _levelQuestion(); // TODO: Add quests!
     _spawningObjects();
     _addCollisions();
 
@@ -117,4 +119,21 @@ class Level extends World with HasGameRef<Activity> {
     }
     player.collisionBlocks = collisionBlocks;
   }
+
+  // void _levelQuestion() {
+  //   final dataLayer = level.tileMap.getLayer<ObjectGroup>('Data');
+
+  //   if (dataLayer != null) {
+  //     for (final data in dataLayer.objects) {
+  //       switch (data.class_) {
+  //         case 'Quest':
+  //           final quest = Quest(
+  //                 position: Vector2(spawnPoint.x, spawnPoint.y),
+  //                 size: Vector2(spawnPoint.width, spawnPoint.height));
+  //           add(quest);
+  //         default:
+  //       }
+  //     }
+  //   }
+  // }
 }
