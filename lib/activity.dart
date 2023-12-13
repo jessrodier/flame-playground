@@ -16,7 +16,7 @@ class Activity extends FlameGame
   Player player = Player(character: 'Ninja Frog');
   late JoystickComponent joystick;
   bool showJoystick = false;
-  List<String> levelNames = ['Level-02', 'Level-03'];
+  List<String> levelNames = ['Level-01', 'Level-02', 'Level-03', 'Game-Over'];
   int currentLevelIndex = 0;
 
   @override

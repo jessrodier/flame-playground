@@ -20,6 +20,7 @@ class Level extends World with HasGameRef<Activity> {
   Level({required this.levelName, required this.player});
   late TiledComponent level;
   List<CollisionBlock> collisionBlocks = [];
+  String question = '';
 
   final questText = TextPaint(
       style: TextStyle(color: BasicPalette.black.color, fontSize: 18));
@@ -27,6 +28,17 @@ class Level extends World with HasGameRef<Activity> {
   @override
   FutureOr<void> onLoad() async {
     level = await TiledComponent.load('$levelName.tmx', Vector2.all(16));
+
+    switch (levelName) {
+      case 'Level-01':
+        question = 'The cat and the _____.';
+      case 'Level-02':
+        question = 'The cow jumped over the _____.';
+      case 'Level-03':
+        question = 'The dish ran away with the _____.';
+      default:
+        question = '';
+    }
 
     add(level);
 
@@ -134,8 +146,7 @@ class Level extends World with HasGameRef<Activity> {
   void _renderQuest() {
     final halfwayPoint = (game.size.x / 4).floor().toDouble();
 
-    add(TextComponent(
-        text: 'The cow jumped over _____ moon.', textRenderer: questText)
+    add(TextComponent(text: question, textRenderer: questText)
       ..anchor = Anchor.center
       ..x = halfwayPoint
       ..y = 96.0

@@ -22,39 +22,46 @@
         },
         "Level-01.tmx": {
             "expandedObjectLayers": [
-                5,
-                2,
-                3
+                3,
+                2
             ],
-            "scale": 1.5,
-            "selectedLayer": 1,
+            "scale": 2,
+            "selectedLayer": 2,
             "viewCenter": {
-                "x": 322.3333333333333,
-                "y": 205.66666666666666
+                "x": 329,
+                "y": 210
             }
         },
         "Level-02.tmx": {
             "expandedObjectLayers": [
-                2,
-                3
+                3,
+                2
             ],
-            "scale": 1.54078125,
+            "scale": 2,
             "selectedLayer": 1,
             "viewCenter": {
-                "x": 320.2920596288409,
-                "y": 227.48199979718083
+                "x": 327,
+                "y": 260.5
+            }
+        },
+        "Level-03-old.tmx": {
+            "scale": 2.35421875,
+            "selectedLayer": 0,
+            "viewCenter": {
+                "x": 320.2761000862813,
+                "y": 184.34990376319107
             }
         },
         "Level-03.tmx": {
             "expandedObjectLayers": [
-                2,
-                3
+                3,
+                2
             ],
-            "scale": 1.7085156249999998,
-            "selectedLayer": 0,
+            "scale": 2,
+            "selectedLayer": 2,
             "viewCenter": {
-                "x": 319.8683067355618,
-                "y": 182.90731171978604
+                "x": 335,
+                "y": 226.5
             }
         }
     },
@@ -74,6 +81,7 @@
     "project": "Activity.tiled-project",
     "property.type": "bool",
     "recentFiles": [
+        "Level-03-old.tmx",
         "Activity.tsx",
         "Fundations Activity.tsx",
         "Level-03.tmx",

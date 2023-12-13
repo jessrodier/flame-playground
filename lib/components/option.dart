@@ -11,6 +11,9 @@ class Option extends SpriteAnimationComponent with HasGameRef<Activity> {
   Option({this.option = 'Spoon', position, size})
       : super(position: position, size: size);
 
+  final questText = TextPaint(
+      style: TextStyle(color: BasicPalette.black.color, fontSize: 18));
+
   @override
   Future<void> onLoad() async {
     // debugMode = true;
@@ -18,8 +21,8 @@ class Option extends SpriteAnimationComponent with HasGameRef<Activity> {
 
     await super.onLoad();
     option = 'test opt';
-    // positionType = PositionType.viewport;
-    // text = 'Q: $option';
+    PositionType positionType = PositionType.viewport;
+    String text = 'Q: $option';
     position = Vector2(2.5, 2.5);
 
     final style = TextStyle(
@@ -38,6 +41,21 @@ class Option extends SpriteAnimationComponent with HasGameRef<Activity> {
       ..y = (height - (height * 0.5))
       ..priority = 300;
 
-    return super.onLoad();
+    final halfwayPoint = (game.size.x / 4).floor().toDouble();
+
+    add(TextComponent(text: 'apple', textRenderer: questText)
+      ..anchor = Anchor.center
+      // ..x = halfwayPoint
+      // ..y = 96.0
+      ..priority = 2);
+
+    // return super.onLoad();
+  }
+
+  @override
+  void update(double dt) {
+    super.update(dt);
+    option = 'test opt';
+    String text = 'Q: $option';
   }
 }
