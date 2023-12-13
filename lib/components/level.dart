@@ -1,4 +1,7 @@
 import 'dart:async';
+import 'package:flame/palette.dart';
+import 'package:flame_playground/components/option.dart';
+import 'package:flutter/material.dart';
 
 import 'package:flame/components.dart';
 import 'package:flame_playground/components/checkpoint.dart';
@@ -18,6 +21,9 @@ class Level extends World with HasGameRef<Activity> {
   late TiledComponent level;
   List<CollisionBlock> collisionBlocks = [];
 
+  final questText = TextPaint(
+      style: TextStyle(color: BasicPalette.black.color, fontSize: 18));
+
   @override
   FutureOr<void> onLoad() async {
     level = await TiledComponent.load('$levelName.tmx', Vector2.all(16));
@@ -25,9 +31,9 @@ class Level extends World with HasGameRef<Activity> {
     add(level);
 
     _scrollingBackground();
-    // _levelQuestion(); // TODO: Add quests!
     _spawningObjects();
     _addCollisions();
+    _renderQuest();
 
     return super.onLoad();
   }
@@ -86,6 +92,11 @@ class Level extends World with HasGameRef<Activity> {
                 position: Vector2(spawnPoint.x, spawnPoint.y),
                 size: Vector2(spawnPoint.width, spawnPoint.height));
             add(checkpoint);
+          case 'Option':
+            final option = Option(
+                position: Vector2(spawnPoint.x, spawnPoint.y),
+                size: Vector2(spawnPoint.width, spawnPoint.height));
+            add(option);
           default:
         }
       }
@@ -120,20 +131,16 @@ class Level extends World with HasGameRef<Activity> {
     player.collisionBlocks = collisionBlocks;
   }
 
-  // void _levelQuestion() {
-  //   final dataLayer = level.tileMap.getLayer<ObjectGroup>('Data');
+  void _renderQuest() {
+    final halfwayPoint = (game.size.x / 4).floor().toDouble();
 
-  //   if (dataLayer != null) {
-  //     for (final data in dataLayer.objects) {
-  //       switch (data.class_) {
-  //         case 'Quest':
-  //           final quest = Quest(
-  //                 position: Vector2(spawnPoint.x, spawnPoint.y),
-  //                 size: Vector2(spawnPoint.width, spawnPoint.height));
-  //           add(quest);
-  //         default:
-  //       }
-  //     }
-  //   }
-  // }
+    add(TextComponent(
+        text: 'The cow jumped over _____ moon.', textRenderer: questText)
+      ..anchor = Anchor.center
+      ..x = halfwayPoint
+      ..y = 96.0
+      ..priority = 2);
+  }
+
+  // void initQuest() {}
 }

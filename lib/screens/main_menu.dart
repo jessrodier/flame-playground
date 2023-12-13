@@ -1,3 +1,4 @@
+import 'package:flame_playground/screens/game_options.dart';
 import 'package:flame_playground/screens/game_play.dart';
 import 'package:flutter/material.dart';
 
@@ -38,7 +39,8 @@ class MainMenu extends StatelessWidget {
             width: MediaQuery.of(context).size.width / 4,
             child: ElevatedButton(
               onPressed: () {
-                // TODO: Navigate to options screen
+                Navigator.of(context).pushReplacement(MaterialPageRoute(
+                    builder: (context) => const GameOptions()));
               },
               child: Text('Options'),
             )),

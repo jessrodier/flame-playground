@@ -1,9 +1,6 @@
 import 'package:flame/flame.dart';
-import 'package:flame/game.dart';
 import 'package:flame_playground/screens/main_menu.dart';
-import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
-import 'package:flame_playground/activity.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 void main() async {
@@ -12,7 +9,7 @@ void main() async {
   await Flame.device.fullScreen();
   await Flame.device.setLandscape();
 
-  Activity game = Activity();
+  // Activity game = Activity();
   // kDebugMode prevents from needing to refresh app on save
   runApp(MaterialApp(
       themeMode: ThemeMode.dark,

@@ -40,7 +40,7 @@ class Player extends SpriteAnimationGroupComponent
   late final SpriteAnimation disappearingAnimation;
 
   final double _gravity = 9.8;
-  final double _jumpForce = 460;
+  final double _jumpForce = 300;
   final double _terminalVelocity = 300;
   double horizontalMovement = 0;
   double moveSpeed = 100;
@@ -177,8 +177,8 @@ class Player extends SpriteAnimationGroupComponent
   }
 
   void _updatePlayerMovement(double dt) {
-    // if (hasJumped) _playerJump(dt);
-    if (hasJumped && isOnGround) _playerJump(dt);
+    if (hasJumped) _playerJump(dt);
+    // if (hasJumped && isOnGround) _playerJump(dt);
 
     // if (velocity.y > _gravity) isOnGround = false; // optional
 
